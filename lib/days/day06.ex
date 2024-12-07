@@ -134,7 +134,7 @@ defmodule Aoc.Day6 do
     candidates = grid |> Grid.keep_walking() |> Map.get(:visited)
 
     candidates
-    |> Enum.map(&check_for_loop(grid, &1))
-    |> Enum.count(&(&1 == :loop))
+    |> Task.async_stream(&check_for_loop(grid, &1), ordered: false)
+    |> Enum.count(&(&1 == {:ok, :loop}))
   end
 end
