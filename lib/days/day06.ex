@@ -131,10 +131,9 @@ defmodule Aoc.Day6 do
 
   def solution_part2(input) do
     grid = parse_input(input)
+    candidates = grid |> Grid.keep_walking() |> Map.get(:visited)
 
-    for x <- 0..grid.max_x, y <- 0..grid.max_y do
-      {x, y}
-    end
+    candidates
     |> Enum.map(&check_for_loop(grid, &1))
     |> Enum.count(&(&1 == :loop))
   end
