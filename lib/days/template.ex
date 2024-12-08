@@ -7,7 +7,7 @@ defmodule Aoc.DayX do
 
   use Aoc.Utils.Test
 
-  defp parse_input(input) do
+  def parse_input(input) do
     input
   end
 
