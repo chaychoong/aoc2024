@@ -12,8 +12,8 @@ mix deps.get
 # Run all tests
 mix test
 
-# Run tests for a specific day
-mix test --only dayX
+# Run tests for a specific day/part, e.g. Day 1 Part 1
+mix test --only day1p1
 ```
 
 ## Repo structure
