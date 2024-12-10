@@ -3,7 +3,7 @@ defmodule Aoc2024Test do
 
   defp day_module(day), do: String.to_existing_atom("Elixir.Aoc.Day#{day}")
 
-  for day <- 1..9 do
+  for day <- 1..10 do
     describe "Day #{day}" do
       @tag String.to_atom("day#{day}p1")
       test "part 1" do
